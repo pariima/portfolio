@@ -4,23 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parima Bajracharya - UX/UI Designer</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <header>
         <div class="container header-container">
             <a href="#" class="logo">
-                <img src="images/Logo-no-bg.png" alt="PB Logo"> 
+                <img src="images/logo.png" alt="PB Logo"> Parima Bajracharya
             </a>
             <nav>
-                <ul>
+                <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#work">Work</a></li>
                     <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contact" class="resume-btn">Resume</a></li>
+                    <li><a href="#contact" class="btn black">Resume</a></li>
                 </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </nav>
         </div>
     </header>
@@ -29,11 +35,11 @@
         <div class="container hero-container">
             <div class="hero-text">
                 <h1>Hi, I'm Parima,<br>A UX/UI Designer.</h1>
-                <p>Designing at the intersection of empathy and user needs, blending functionality with aesthetics to create meaningful experiences.</p>
-                <a href="#work" class="btn">See My Work</a>
-                <div class="social-icons">
-                    <a href="#"><img src="images/youtube-icon.png" alt="YouTube"></a>
-                    <a href="#"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
+                <p class="responsive-text">Designing at the intersection of empathy and user needs, blending functionality with aesthetics to create meaningful experiences.</p>
+                <div class="btn-container">
+                    <a href="#work" class="btn black">See My Work</a>
+                    <a href="#" class="btn black"><img src="images/youtube-icon.png" alt="YouTube"></a>
+                    <a href="#" class="btn black"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
                 </div>
             </div>
             <div class="hero-image">
@@ -44,48 +50,56 @@
 
     <section id="work" class="work">
         <div class="container">
-            <h2 class="outline-title">WORK</h2>
-            <div class="projects">
-                <div class="project card pink">
-                    <h3>Rebranding Puma’s Website</h3>
-                    <p>UX Redesign | Academic Project</p>
-                    <span class="arrow">→</span>
+            <h2 class="outline-title large">WORK</h2>
+            <div class="slider-container">
+                <button class="slide-arrow left">&#10094;</button>
+                <div class="projects slider">
+                    <div class="project card pink">
+                        <h3>Rebranding Puma’s Website</h3>
+                        <p>UX Redesign | Academic Project</p>
+                        <span class="arrow">→</span>
+                    </div>
+                    <div class="project card green">
+                        <h3>Tea-Coffee Comparison</h3>
+                        <p>Competitive Analysis | Information Architecture</p>
+                        <span class="arrow">→</span>
+                    </div>
+                    <div class="project card peach">
+                        <h3>Advanced Research on Naer VR</h3>
+                        <p>Usability Research | WebXR</p>
+                        <span class="arrow">→</span>
+                    </div>
+                    <div class="project card blue">
+                        <h3>VR Game</h3>
+                        <p>Game Design | Unity Project</p>
+                        <span class="arrow">→</span>
+                    </div>
                 </div>
-                <div class="project card green">
-                    <h3>Tea-Coffee Comparison</h3>
-                    <p>Competitive Analysis | Information Architecture</p>
-                    <span class="arrow">→</span>
-                </div>
-                <div class="project card peach">
-                    <h3>Advanced Research on Naer VR</h3>
-                    <p>Usability Research | WebXR</p>
-                    <span class="arrow">→</span>
-                </div>
-                <div class="project card blue">
-                    <h3>VR Game</h3>
-                    <p>Game Design | Unity Project</p>
-                    <span class="arrow">→</span>
-                </div>
+                <button class="slide-arrow right">&#10095;</button>
             </div>
         </div>
     </section>
 
     <section id="blog" class="blog">
         <div class="container">
-            <h2 class="outline-title">EXPLORATION DECK</h2>
-            <div class="blog-posts">
-                <div class="post card green">
-                    <h3>Unity for VR: Roll-a-Ball Game</h3>
-                    <p>Learning Unity by building a simple VR game.</p>
+            <h2 class="outline-title large">EXPLORATION DECK</h2>
+            <div class="slider-container">
+                <button class="slide-arrow left">&#10094;</button>
+                <div class="blog-posts slider">
+                    <div class="post card green">
+                        <h3>Unity for VR: Roll-a-Ball Game</h3>
+                        <p>Learning Unity by building a simple VR game.</p>
+                    </div>
+                    <div class="post card blue-dark">
+                        <h3>AR 101: Core Concepts</h3>
+                        <p>Things I learned about AR after using LensStudio.</p>
+                    </div>
+                    <div class="post card beige">
+                        <h3>Designing for XR</h3>
+                        <p>Designing my workspace for VR environment using Glitch.</p>
+                    </div>
                 </div>
-                <div class="post card blue-dark">
-                    <h3>AR 101: Core Concepts</h3>
-                    <p>Things I learned about AR after using LensStudio.</p>
-                </div>
-                <div class="post card beige">
-                    <h3>Designing for XR</h3>
-                    <p>Designing my workspace for VR environment using Glitch.</p>
-                </div>
+                <button class="slide-arrow right">&#10095;</button>
             </div>
         </div>
     </section>
@@ -111,5 +125,19 @@
             </ul>
         </div>
     </footer>
+    <script>
+        $(document).ready(function() {
+            $('.hamburger').click(function() {
+                $('.nav-links').toggleClass('open');
+            });
+            
+            $('.slide-arrow.left').click(function() {
+                $('.slider').animate({scrollLeft: '-=300px'}, 300);
+            });
+            $('.slide-arrow.right').click(function() {
+                $('.slider').animate({scrollLeft: '+=300px'}, 300);
+            });
+        });
+    </script>
 </body>
 </html>
