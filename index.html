@@ -51,7 +51,7 @@
     <section id="work" class="work">
         <div class="container">
             <h2 class="outline-title large">WORK</h2>
-            <div class="slider-container">
+            <div class="slider-container work-slider">
                 <button class="slide-arrow left">&#10094;</button>
                 <div class="projects slider">
                     <a href="project1.html" class="project card pink" style="background-image: url('images/project1.jpg');">
@@ -79,7 +79,7 @@
     <section id="blog" class="blog">
         <div class="container">
             <h2 class="outline-title large">EXPLORATION DECK</h2>
-            <div class="slider-container">
+            <div class="slider-container blog-slider">
                 <button class="slide-arrow left">&#10094;</button>
                 <div class="blog-posts slider">
                     <a href="blog1.html" class="post card green" style="background-image: url('images/blog1.jpg');">
@@ -100,18 +100,27 @@
         </div>
     </section>
 
-    <footer>
+    <footer class="footer">
         <div class="container footer-container">
             <div class="footer-logo">
                 <img src="images/logo.png" alt="PB Logo">
             </div>
-            <ul class="footer-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Resume</a></li>
-            </ul>
+            <div class="footer-links-container">
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Resume</a></li>
+                </ul>
+                <ul class="footer-links">
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="mailto:parima.bajra@gmail.com">E-Mail</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
     <script>
@@ -120,11 +129,18 @@
                 $('.nav-links').toggleClass('open');
             });
             
-            $('.slide-arrow.left').click(function() {
-                $('.slider').animate({scrollLeft: '-=300px'}, 300);
+            $('.work-slider .slide-arrow.left').click(function() {
+                $('.work-slider .slider').animate({scrollLeft: '-=300px'}, 300);
             });
-            $('.slide-arrow.right').click(function() {
-                $('.slider').animate({scrollLeft: '+=300px'}, 300);
+            $('.work-slider .slide-arrow.right').click(function() {
+                $('.work-slider .slider').animate({scrollLeft: '+=300px'}, 300);
+            });
+
+            $('.blog-slider .slide-arrow.left').click(function() {
+                $('.blog-slider .slider').animate({scrollLeft: '-=300px'}, 300);
+            });
+            $('.blog-slider .slide-arrow.right').click(function() {
+                $('.blog-slider .slider').animate({scrollLeft: '+=300px'}, 300);
             });
         });
     </script>
